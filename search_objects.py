@@ -27,18 +27,23 @@ consider
 
 """
 
+# =================================================
+
+if __name__ == "__main__":
+
+    import  web_search
+    web_search.main( )
+
+    # a_web_searcer    = WebSearcher( )
+    # build_web_searcher_dict()
+
+
 import sys
 import webbrowser
 import collections
 
 
-#Constructor   = collections.namedtuple( 'Constructor',  "class_constructor dict_args" )
-# constructor constructs the search object
-
-
-#from   app_global import AppGlobal
-
-
+# ----------------------
 class WebSearcherColletions( ):
     """
     About this class.....
@@ -63,7 +68,6 @@ class WebSearcherColletions( ):
         """
         what it says
 
-
         """
         self.web_searcher_dict[ a_web_searcher.search_name ]  = a_web_searcher
 
@@ -71,11 +75,9 @@ class WebSearcherColletions( ):
     def _build_web_searcher_dict( self  ):
         """
         what it says
-        build the universe of searchers
-
+        build the universe of searchers ... other in modules like search_objects_p1
         """
         web_searcher_dict       =     self.web_searcher_dict
-
 
         # -------- start here, un implemented list may be at top
         # ------- unimplemented
@@ -85,14 +87,14 @@ class WebSearcherColletions( ):
         # ---- implemented
         # ---- "https://www.limetorrents.to/search/all/",
         a_searcher         =  WebSearcher(
-                                       search_name   = "lime",
+                                       search_name   = "Lime",
                                        base_url      = "https://www.limetorrents.to/search/all/",
                                        url_join_1    = " ",
                                        url_1to2      = "",
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "/",
                                        url_home      = "https://www.limetorrents.to",
-                                       group_list    = ["torrent", "video",   ],
+                                       group_list    = ["Torrent", "Video",   ],
                                       )
 
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
@@ -100,14 +102,14 @@ class WebSearcherColletions( ):
         # ----  https://www.roku.com/whats-on/search?q=korean%20drama
         #https://www.roku.com/whats-on/search?q=star%20trek%20strange%20new%20worlds
         a_searcher         =  WebSearcher(
-                                       search_name   = "roku",
+                                       search_name   = "Roku",
                                        base_url      = "https://www.roku.com/whats-on/search?q=",
                                        url_join_1    = " ",
                                        url_1to2      = "",
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "",
                                        url_home      = "https://www.roku.com",
-                                       group_list    = [ "video", "video_stream", "stream" ],
+                                       group_list    = [ "Video",   ],
                                       )
 
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
@@ -118,53 +120,50 @@ class WebSearcherColletions( ):
                                        base_url      = "https://www.netflix.com/search?q=",
                                        url_join_1    = " ",
                                        url_1to2      = "",
-
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "",
                                        url_home      = "https://www.netflix.com/",
-                                       group_list    = [ "video", "stream", "video_stream", "video_stream_me", ],
+                                       group_list    = [ "Video",  ],
                                       )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ----
         a_searcher         =  WebSearcher(
-                                       search_name   = "youtube",
+                                       search_name   = "Youtube",
                                        base_url      = "https://www.youtube.com/results?search_query=",
                                        url_join_1    = "+",
                                        url_1to2      = "",
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "",
                                        url_home      = "https://www.youtube.com/",
-                                       group_list    = [ "video", "howto", "python", "video_stream",  "video_stream_me", ],
+                                       group_list    = [ "Video", "Howto", "Python",    ],
                                       )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
-
 
         # ----
         a_searcher         =  WebSearcher(
-                                       search_name   = "wpedia",
+                                       search_name   = "Wpedia",
                                        base_url      = "https://en.wikipedia.org/w/index.php?search=+",
                                        url_join_1    = "+",
                                        url_1to2      = "",
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "+&title=Special%3ASearch&ns0=1",
                                        url_home      = "https://en.wikipedia.org",
-                                       group_list    = [ "wiki", "video" ],
+                                       group_list    = [ "Search" ],
                                       )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
-
         # ---- https://yourbittorrent.com/?q=korean-costume
         a_searcher         =  WebSearcher(
-                                       search_name   = "yourbit",
+                                       search_name   = "Yourbit",
                                        base_url      = "https://yourbittorrent.com/?q=",
                                        url_join_1    = "-",
                                        url_1to2      = "",
 
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "",
                                        url_home      = "https://yourbittorrent.com",
-                                       group_list    = ["torrent", "video"],
+                                       group_list    = ["Torrent", "Video"],
                                       )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
@@ -174,11 +173,10 @@ class WebSearcherColletions( ):
                                        base_url      = "https://www.1377x.to/search/%20",
                                        url_join_1    = "%20",
                                        url_1to2      = "",
-
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "%20/1/",
                                        url_home      = "https://www.1377x.to/",
-                                       group_list    = ["torrent", "video"],
+                                       group_list    = ["Torrent", "Video"],
                                       )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
@@ -188,11 +186,10 @@ class WebSearcherColletions( ):
                                        base_url      = "https://katcr.to/usearch/",
                                        url_join_1    = "%20" ,
                                        url_1to2      = "",
-
-                                       url_join_2    = "",  # "" suppress second search
+                                       url_join_2    = "",
                                        url_suffix    = "/",
                                        url_home      = "https://katcr.to",
-                                       group_list    = ["torrent", "video"],
+                                       group_list    = ["Torrent", "Video"],
                                       )
 
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
@@ -204,254 +201,231 @@ class WebSearcherColletions( ):
                                    url_join_1    = "%20",
                                    url_1to2      = "",
 
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "/",
                                    url_home      = "https://idope.se/",
-                                   group_list    = [ "torrent", "video" ],
+                                   group_list    = [ "Torrent", "Video" ],
                                   )
 
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://eztv.re/search/word-another-word-too
         a_searcher         =  WebSearcher(
-                                   search_name   = "eztv",
+                                   search_name   = "Eztv",
                                    base_url      = "https://eztv.re/search/",
                                    url_join_1    = "-",
                                    url_1to2      = "",
-
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
                                    url_home      = "https://eztv.re/",
-                                   group_list    = [ "torrent", "video" ],
+                                   group_list    = [ "Torrent", "Video" ],
                                   )
 
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ----         https://torrentgalaxy.to/torrents.php?search=korean+costume+drama&lang=0&nox=2#results
         a_searcher         =  WebSearcher(
-                                   search_name   = "torrentg",
+                                   search_name   = "Torrentg",
                                    base_url      = "https://torrentgalaxy.to/torrents.php?search=",
                                    url_join_1    = "+",
                                    url_1to2      = "",
-
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "&lang=0&nox=2#results",
                                    url_home      = "https://torrentgalaxy.to",
-                                   group_list    = [ "torrent", "video" ],
+                                   group_list    = [ "Torrent", "Video" ],
                                   )
 
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ----  https://www.amazon.com/s?k=bluetooth+headphone   works
         a_searcher         =  WebSearcher(
-                                   search_name   = "amazon",
+                                   search_name   = "Amazon",
                                    base_url      = "https://www.amazon.com/s?k=",
                                    url_join_1    = "+",
                                    url_1to2      = "",
-
                                    url_join_2    = "",
                                    url_suffix    = "",
                                    url_home      = "https://www.amazon.com",
-                                   group_list    = [ "shop", "electronics", "video", "video_stream",  "video_stream_me", ],
+                                   group_list    = [ "Shop", "Electronics", "Video",   ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://www.banggood.com/search/tissue-box.html?from=nav&direct=0
         a_searcher         =  WebSearcher(
-                                   search_name   = "bangg",
+                                   search_name   = "Bangg",
                                    base_url      = "https://www.banggood.com/search/",
                                    url_join_1    = "-",
                                    url_1to2      = "",
-
                                    url_join_2    = "",
                                    url_suffix    = ".html?from=nav&direct=0",
                                    url_home      = "https://www.banggood.com",
-                                   group_list    = [ "shop", "electronics" ],
+                                   group_list    = [ "Shop", "Electronics" ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://www.google.com/search?tbm=shop&hl=en&psb=1&ved=2ahUKEwiYqouDjKX9AhWMD4gJHT55DEQQu-kFegQIABAR&q=tissue+box&oq=tissue+box
         a_searcher         =  WebSearcher(
-                     search_name   = "gshop",
+                     search_name   = "Gshop",
                      base_url      = "https://www.google.com/search?tbm=shop&hl=en&psb=1&ved=2ahUKEwiYqouDjKX9AhWMD4gJHT55DEQQu-kFegQIABAR&q=",
                      url_join_1    = "+",
                      url_1to2      = "",
-
                      url_join_2    = "&oq=",
                      url_suffix    = "",
                      url_home      = "xxx",
-                     group_list    = [ "search", "shop" ],
+                     group_list    = [ "Search", "Shop" ],
                     )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=tissue+box&_sacat=0
         a_searcher         =  WebSearcher(
-                     search_name   =  "ebay",
+                     search_name   = "Ebay",
                      base_url      = "https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=",
                      url_join_1    = "+",
                      url_1to2      = "",
-
-                     url_join_2    = "",  # "" suppress second search
+                     url_join_2    = "",
                      url_suffix    = "&_sacat=0",
                      url_home      = "https://www.ebay.com/",
-                     group_list    = [ "shop", "electronics" ],
+                     group_list    = [ "Shop", "Electronics" ],
                     )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ----   works  https://www.aliexpress.com/w/wholesale-tissue-box-covers.html?catId=0&initiative_id=SB_20230220132913&SearchText=tissue+box+covers
         a_searcher         =  WebSearcher(
-                     search_name   = "aliex",
+                     search_name   = "Alie_Express",
                      base_url      = "https://www.aliexpress.com/w/wholesale-",
                      url_join_1    = "-",
                      url_1to2      = ".html?catId=0&initiative_id=SB_20230220132913&SearchText=",
-
-                     url_join_2    = "+",  # "" suppress second search
+                     url_join_2    = "+",
                      url_suffix    = "",
                      url_home      = "https://www.aliexpress.com/",
-                     group_list    = [ "shop", "electronics" ],
+                     group_list    = [ "Shop", "Electronics" ],
                     )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://www.imdb.com/wind and water
         a_searcher         =  WebSearcher(
-                                   search_name   = "imdb",
+                                   search_name   = "Imdb",
                                    base_url      = "https://www.imdb.com/find/?q=",
                                    url_join_1    = " ",
                                    url_1to2      = "",
-
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
                                    url_home      = "https://www.imdb.com/",
-                                   group_list    = [ "video", ],
+                                   group_list    = [ "Video", ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ----  https://duckduckgo.com/?q=best+korean+costume+dramas
 
         a_searcher         =  WebSearcher(
-                                   search_name   = "dduck",
+                                   search_name   = "DuckGo",
                                    base_url      = "https://duckduckgo.com/?q=",
                                    url_join_1    = "+",
                                    url_1to2      = "",
-
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
                                    url_home      =  "https://duckduckgo.com/",
-                                   group_list    = [ "search" ],
+                                   group_list    = [ "Search" ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://www.viki.com/search?q=best%20costume
         a_searcher         =  WebSearcher(
-                                   search_name   = "viki",
+                                   search_name   = "Viki",
                                    base_url      = "https://www.viki.com/search?q=",
                                    url_join_1    = " ",
                                    url_1to2      = "",
-
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
                                    url_home      = "https://www.viki.com/",
-                                   group_list    = [ "video", "stream", "video_stream",  "video_stream_me", ],
+                                   group_list    = [ "Video",  ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://www.ondemandchina.com/en/search?q=beautiful%20sister
         a_searcher         =  WebSearcher(
-                                   search_name   = "china",
+                                   search_name   = "ChinaVideo",
                                    base_url      = "https://www.ondemandchina.com/en/search?q=",
                                    url_join_1    = " ",
                                    url_1to2      = "",
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
                                    url_home      = "https://www.ondemandchina.com/en/",
-                                   group_list    = [ "video", "stream", "video_stream", ],
+                                   group_list    = [ "Video",   ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
-        # ---- xxx https://www.iq.com/play/monkey-king-uproar-in-dragon-palace-2019-19rqvvh4ds?lang=en_us
+        # ---- https://www.iq.com/play/monkey-king-uproar-in-dragon-palace-2019-19rqvvh4ds?lang=en_us
+        # https://www.iq.com/search?query=costume%20drama&originInput=costume%20drama
+
         a_searcher         =  WebSearcher(
-                                   search_name   = "x",
-                                   base_url      = "xxx",
-                                   url_join_1    = " ",
-                                   url_1to2      = "",
-                                   url_join_2    = "",  # "" suppress second search
+                                   search_name   = "IqVideo",
+                                   base_url      = "https://www.iq.com/search?query=",
+                                   url_join_1    = "%20",
+                                   url_1to2      = "&originInput=",
+                                   url_join_2    = "%20",
                                    url_suffix    = "",
-                                   url_home      = "xxx",
-                                   group_list    = [ "video", "stream", "video_stream" ],
+                                   url_home      = "https://www.iq.com",
+                                   group_list    = [ "Video",  ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- xxx https://www.crackle.com/watch/24012835-27AA-4C43-A5D6-EC05FE854591  blocks add blockers
+
         a_searcher         =  WebSearcher(
-                                   search_name   = "x",
-                                   base_url      = "xxx",
-                                   url_join_1    = " ",
+                                   search_name   = "Crackle",
+                                   base_url      = "https://www.crackle.com/search?term=",
+                                   url_join_1    = "+",
                                    url_1to2      = "",
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
-                                   url_home      = "xxx",
-                                   group_list    = [  "video_stream_mexx", ],
+                                   url_home      = "https://www.crackle.com",
+                                   group_list    = [  "Video", ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- xxx https://therokuchannel.roku.com/
+        #   https://therokuchannel.roku.com/search/asian%20drama
         a_searcher         =  WebSearcher(
-                                   search_name   = "x",
-                                   base_url      = "xxx",
-                                   url_join_1    = " ",
+                                   search_name   = "Roku",
+                                   base_url      = "https://therokuchannel.roku.com/search/",
+                                   url_join_1    = "%20",
                                    url_1to2      = "",
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
-                                   url_home      = "xxx",
-                                   group_list    = [],
+                                   url_home      = "https://therokuchannel.roku.com/",
+                                   group_list    = [ "Video"],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ---- https://www.kocowa.com/en_us/profile   may need sign up, not much content
         #  https://www.kocowa.com/en_us/media/58720214/p1h-a-new-world-begins
+        # https://www.kocowa.com/en_us/search?q=costume%20drama
         a_searcher         =  WebSearcher(
-                                   search_name   = "x",
-                                   base_url      = "xxx",
-                                   url_join_1    = " ",
+                                   search_name   = "Kocowa",
+                                   base_url      = "https://www.kocowa.com/en_us/search?q=",
+                                   url_join_1    = "%20",
                                    url_1to2      = "",
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "",
-                                   url_home      = "xxx",
-                                   group_list    = [],
+                                   url_home      = "https://www.kocowa.com",
+                                   group_list    = [ "Video"],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
 
         # ----
         a_searcher         =  WebSearcher(
-                                   search_name   = "pirate_bay",
+                                   search_name   = "Pirate_bay",
                                    base_url      = "https://thepiratebay.org/search.php?q=",
                                    url_join_1    = "+",
                                    url_1to2      = "",
 
-                                   url_join_2    = "",  # "" suppress second search
+                                   url_join_2    = "",
                                    url_suffix    = "&all=on&search=Pirate+Search&page=0&orderby=",
                                    url_home      = "https://thepiratebay.org",
-                                   group_list    = [ "torrent", "video",    ],
+                                   group_list    = [ "Torrent", "Video",    ],
                                   )
         web_searcher_dict[ a_searcher.search_name ]  = a_searcher
-
-        # # ---- xxx
-        # a_searcher         =  WebSearcher(
-        #                            search_name   = "x",
-        #                            base_url      = "xxx",
-        #                            url_join_1    = " ",
-        #                            url_1to2      = "",
-        #
-        #                            url_join_2    = "",  # "" suppress second search
-        #                            url_suffix    = "",
-        #                            url_home      = "xxx",
-        #                            group_list    = [],
-        #                           )
-        # web_searcher_dict[ a_searcher.search_name ]  = a_searcher
-
-        #rint( a_searcher.search_name )
-        web_searcher_dict[ a_searcher.search_name ]  = a_searcher
-        # -----------
 
         return web_searcher_dict
 
@@ -544,17 +518,11 @@ class WebSearcherColletions( ):
         a_str       =  ""
         a_str       = f"{a_str}\n>>>>>>>>>>* WebSearcherCollections()  needs to be written *<<<<<<<<<<<<"
         # a_str       = f"{a_str}{line_begin}search_name         >{self.search_name}<"
-        # #a_str       = f"{a_str}{line_begin}search_class        >{self.search_class}<"
-        # a_str       = f"{a_str}{line_begin}base_url            >{self.base_url}<"
+        a_str       = f"{a_str}{line_begin}web_searcher_dict        >{self.self.web_searcher_dict}<"
+        a_str       = f"{a_str}{line_begin}web_searcher_groups      >{self.self.web_searcher_groups}<"
         # a_str       = f"{a_str}{line_begin}url_suffix          >{self.url_suffix}<"
         # a_str       = f"{a_str}{line_begin}url_join_1          >{self.url_join_1}<"
         # a_str       = f"{a_str}{line_begin}url_1to2            >{self.url_1to2}<"
-        # a_str       = f"{a_str}{line_begin}url_join            >{self.url_join}<"
-        # a_str       = f"{a_str}{line_begin}url_join_2          >{self.url_join_2}<"
-        # a_str       = f"{a_str}{line_begin}url_suffix          >{self.url_suffix}<"
-
-        # a_str       = f"{a_str}{line_begin}arg3             >{self.arg3}<"
-        # a_str       = f"{a_str}{line_begin}arg3             >{self.arg3}<"
 
         return a_str
 
@@ -565,18 +533,17 @@ class WebSearcher( ):
     a web_searcher contains the info to search a single site and
     to run that search
     """
-
     #----------- init -----------
     def __init__( self,
-                  search_name    = "",
-                  base_url       = "",
-                  url_join_1     = "",
-                  url_1to2       = "",
-                  url_join_2     = "",
-                  url_suffix     = "",
-                  url_home       = "",
-                  group_list     = None,
-                  search_description     = "",
+                  search_name           = "",
+                  base_url              = "",
+                  url_join_1            = "",
+                  url_1to2              = "",
+                  url_join_2            = "",
+                  url_suffix            = "",
+                  url_home              = "",
+                  group_list            = None,
+                  search_description    = "",
                   ):
 
         # make a clipboard func for this ??
@@ -655,7 +622,6 @@ class WebSearcher( ):
                               search_word_url_2 + self.url_suffix )
 
         #rint( url )
-
         return url
 
     # --------------------------------------------------
@@ -666,12 +632,3 @@ class WebSearcher( ):
         #rint( "run_search_url" )
         webbrowser.open( url, new = 0, autoraise = True )
 
-# =================================================
-
-if __name__ == "__main__":
-
-    import  web_search
-    web_search.main( )
-
-    # a_web_searcer    = WebSearcher( )
-    # build_web_searcher_dict()

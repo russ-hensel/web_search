@@ -16,8 +16,7 @@ import os
 
 from   app_global import AppGlobal
 
-# for development environments for russ
-#sys.path.append( "D:/Russ/0000/python00/python3/_projects/rshlib" )
+# see comment in web_search.py
 sys.path.append( "/media/russ/j_sg_bigcase/sync_py_3/_projects/rshlib/" )
 sys.path.append( "../rshlib/" )
 
@@ -27,6 +26,9 @@ class Parameters(  ):
     """
     manages parameter values use like ini file
     a struct but with a few smarts
+    modify to suit your situation but
+        it is code so you can mess it up, just be a bit
+        thoughtfull
     """
     # -------
     def choose_mode( self ):
@@ -35,7 +37,9 @@ class Parameters(  ):
         this will override some values in defaut mode
         """
         # ---- ---------- choose ---------
-#       #self.russ_1_mode()
+        #self.mode_example()
+
+        # more modes, not currently in existance
         #self.mode_test_1()
         #self.test_photo_db_1()
 
@@ -101,7 +105,6 @@ class Parameters(  ):
             self.win_geometry       = '1000x700+250+5'          # width x height position
 #            self.pylogging_fn       = "millhouse_clipboard.py_log"   # file name for the python logging
 
-
     # -------
     def default_config( self ):
         """
@@ -126,93 +129,24 @@ class Parameters(  ):
         # what it says, the default search string
         self.search_lists                  = {}    # appeare in gui dropdown
 
-        search_name                        = "korean costume drama download"
-        # name for a list of sites to search
-        search_site_list                   =  [
-                                                "1377",
-                                                "eztv",
-                                                "idope",
-                                                "katcr",
-                                                "lime",
-                                                "pirate_bay",
-                                                "torrentg",
-                                                "wpedia",
-                                                "yourbit",
-                                                "youtube",
-                                                # "youtube",
-                                                # "youtube",
-                                                # "youtube",
-                                                "wpedia",
-                                              ]
 
         # list of web searches by name ( web_searcher.search_name )
 
-        self.search_lists[ search_name ]   = search_site_list
-        # the dict of search_lists
-
         #---------
-        search_name                        = "shop"
-        search_site_list                   =  [ "amazon",
-                                                "bangg",
-                                                "aliex",
-                                                "imdb",
-                                                "ebay",
-                                                "gshop",
+        search_name                        = "Shoping example list"
+        search_site_list                   =  [ "Amazon",
+                                                "Bangg",
                                                ]
 
         self.search_lists[ search_name ]   = search_site_list
 
-        #---------
-        search_name                        = "all i hope"
-        search_site_list                   =  [
-                                                "amazon",
-                                                "1377",
-                                                "aliex",
-                                                "bangg",
-                                                "ebay",
-                                                "eztv",
-                                                "gshop",
-                                                "idope",
-                                                "imdb",
-                                                "katcr",
-                                                "lime",
-                                                "pirate_bay",
-                                                "torrentg",
-                                                "wpedia",
-                                                "yourbit",
-                                                "youtube",
-                                                "netflix",
-                                                "dduck",
-                                                "viki",
-                                                "china",
-                                               ]
+        # #---------
+        # search_name                        = "test"
+        # search_site_list                   =  [
+        #                                        "china",
+        #                                        ]
 
-        self.search_lists[ search_name ]   = search_site_list
-
-        #---------
-        search_name                        = "test"
-        search_site_list                   =  [
-                                               "china",
-                                               ]
-
-        self.search_lists[ search_name ]   = search_site_list
-
-        # ----- names in  search_site_list
-        search_name                        = "one site"
-        search_site_list                   =  [
-                                                "wpedia",
-                                              ]
-        self.search_lists[ search_name ]   = search_site_list
-
-        # ----- names in  search_site_list
-        search_name                        = "three sites "
-        search_site_list                   =  [
-                                                "1377",
-                                                "eztv",
-                                                "idope",
-                                              ]
-        self.search_lists[ search_name ]   = search_site_list
-
+        # self.search_lists[ search_name ]   = search_site_list
 
         self.search_site_list              =  search_site_list
 

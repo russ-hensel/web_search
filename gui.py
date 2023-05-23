@@ -10,7 +10,7 @@ import logging
 
 
 #----- local
-sys.path.append( "../rshlib" )   # should only be needed for rsh development
+sys.path.append( "../rshlib" )   # see comment in web_search.py
 import gui_ttk_ext
 
 #import gui_helper
@@ -304,7 +304,7 @@ class GUI( ):
 
         first_key   = next( iter( AppGlobal.parameters.search_lists) )
         comb_var    = first_key
-        a_widget.current( 2 ) # !! right now seems not to be working
+        a_widget.current( 0 ) # !! right now seems not to be working
         a_widget.grid(  column = ix_col, row = ix_row, )
         self.search_site_widget  = a_widget
 

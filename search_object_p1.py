@@ -35,18 +35,18 @@ web_searcher_colletions   = AppGlobal.controller.web_server_collections
 # ---- construct and add a new web searcher
 
 # model search url"
-#     https://www.limetorrents.to/search/all/word1-word2-word3/
-#     https://www.limetorrents.to/search/all/bad-sisters/
+#      https://www.instructables.com/search/?q=hose%20repair&projects=all
+#     https://www.instructables.com/
 a_searcher         =  search_objects.WebSearcher(
-                                search_name   = "limetest",
+                                search_name   = "Instructables",
                                 # a name or nick name if you wish for each search, use something you find
                                 # meaningfull or menomic for yourself, has no other function
 
-                                #                https://www.limetorrents.to/search/all/bad-sisters/
-                                base_url      = "https://www.limetorrents.to/search/all/",
+
+                                base_url      = "https://www.instructables.com/search/?q=",
                                 # a string to begin to build a web search url -- see model search above
 
-                                url_join_1    = "-",
+                                url_join_1    = "%20",
                                 # a connector to join the search words together, see model to determin what it is
                                 # here by inspection it is a -
 
@@ -56,12 +56,12 @@ a_searcher         =  search_objects.WebSearcher(
 
                                 url_join_2    = "",  # "" suppress second search
 
-                                url_suffix    = "/", # suffix at end of search url
+                                url_suffix    = "&projects=all", # suffix at end of search url
 
-                                url_home      = "https://www.limetorrents.to",
+                                url_home      = "https://www.instructables.com/",
                                 # the home url of the site, not used in the search, perhap not used at all so far
 
-                                group_list    = ["tester",     ],
+                                group_list    = ["HowTo", "Electronics",     ]
                                 # groups the searcher belongs to
 
                                 )
@@ -69,6 +69,6 @@ a_searcher         =  search_objects.WebSearcher(
 web_searcher_colletions.add_to_web_searcher_dict( a_searcher )
 
 
-
+# =============================== eof ========================
 
 

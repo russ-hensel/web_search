@@ -20,7 +20,8 @@ import datetime
 
 #----- local imports
 
-sys.path.append( "../rshlib" )
+sys.path.append( "../rshlib" )  # just for rsh, harmless unless the directory
+                                # exists on your computer, safe to delete it
 
 import parameters
 import gui
@@ -47,10 +48,10 @@ class App(  ):
         usual init for main app
         """
         self.app_name          = "WebSearch"
-        self.app_version       = "Ver 4:  2023_05_16.01"
+        self.app_version       = "Ver 4:  2023_05_22.01"
         AppGlobal.controller   = self
         self.gui               = None
-        self.sort_list         = None   # create later may not be a list
+        #self.sort_list         = None   # create later may not be a list
         self.restart_count     = -1     # count from 0
         self.logger            = None   # for access in rest of class?
         AppGlobal.logger       = None
@@ -100,7 +101,6 @@ class App(  ):
             print( exec_me )
             exec( exec_me, globals(), locals() )
 
-
             #else:
                 # would like test so done only if necessary
             exec_me     = f"importlib.reload( {i_module} )"
@@ -127,9 +127,6 @@ class App(  ):
         self.gui.root.attributes( '-topmost', False )
         self.gui.root.mainloop()
 
-        #self.post_to_queue( "stop", None  , (  ) )
-
-        # self.helper_thread.join()
         self.logger.info( self.app_name + ": all done" )
 
     # ------------------------------------------
@@ -179,7 +176,6 @@ class App(  ):
         if len( sys.argv ) == 0:
             logger.info( "no command line arg " )
         else:
-
             for ix_arg, i_arg in enumerate( sys.argv ):
                 msg = f"command line arg + {str( ix_arg ) }  =  { i_arg })"
                 logger.log( AppGlobal.force_log_level, msg )
@@ -246,7 +242,6 @@ class App(  ):
 
         else:
             #rint( "use list search in debug mode" )
-
 
             search_obj_list        = self.search_obj_list
 
