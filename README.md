@@ -30,10 +30,11 @@ Running the app:
 Configuration:
 
     This involves coding!  Parameter are in parameters.py see the file and also: tbd
+    comming soon.
 
     To add new searches add to: search_objects_p1.py ( directions in file )
 
-    If you want more search configuration file, build ones like search_objects_p1.py
+    If you want more search configuration files, build ones like search_objects_p1.py
     and modify the parameter:  self.more_search_objects
 
 Installation:
