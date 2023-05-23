@@ -38,9 +38,9 @@ if __name__ == "__main__":
     # build_web_searcher_dict()
 
 
-import sys
+
 import webbrowser
-import collections
+
 
 
 # ----------------------
@@ -488,7 +488,7 @@ class WebSearcherColletions( ):
         #self.web_searcher_list   = web_searcher_list
         #rint( web_searcher_set )
         web_searcher_list  = sorted( web_searcher_set, )  # implicet key....
-        return web_searcher_set
+        return web_searcher_list
 
     #------------------
     def build_web_searcher_list_from_names( self, names = None  ):
